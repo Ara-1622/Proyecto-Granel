@@ -1,0 +1,142 @@
+//mixin
+@use "../abstracts/mixin";
+
+//variables 
+@use "../abstracts/variables";
+
+// estilos de header
+header {
+
+    @include flex;
+
+    nav {
+        ul {
+            list-style: none;
+        }
+    }
+}
+
+// esstilos de main
+main {
+    h1 {
+        line-height: 4cm;
+
+        @include principal;
+
+        nav {
+            p {
+                line-height: 5px;
+                letter-spacing: 5%;
+                font-style: oblique;
+            }
+
+            ul {
+                li {
+                    line-height: 1cm;
+                }
+            }
+        }
+
+    }
+
+    h2 {
+        line-height: 1cm;
+        font-style: oblique;
+        text-align: center;
+    }
+
+    p {
+        line-height: 1cm;
+        text-align: center;
+        font-style: italic;
+    }
+
+    // img nosotros
+    div {
+        ul {
+            img {
+                align-items: center;
+                width: 52%;
+            }
+        }
+    }
+}
+
+section {
+    @include flex;
+
+    div {
+        img {
+            display: flex;
+            width: 50%;
+        }
+    }
+
+}
+
+/* BT*/
+.slides {
+    @include grid;
+
+    img {
+        scroll-snap-align: start;
+        border-radius: 10px;
+        width: 540px;
+        object-fit: contain;
+    }
+
+    :-webkit-scrollbar {
+        display: none;
+    }
+
+}
+
+/*MQ*/
+/*estilos mobile*/
+@media screen and (max-width: 768px) {
+    header {
+        justify-content: center
+    }
+
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 40%);
+    }
+}
+
+main .img-frascos {
+    grid-column: span 2;
+
+}
+
+// estilos tablet
+@media screen and (min-width:768px) and (max-width:992px) {
+    header {
+        justify-content: center
+    }
+
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 40%);
+    }
+}
+
+main .img-frascos {
+    grid-column: span 2;
+
+}
+
+/* class */
+.enlaces {
+    color: brown;
+    font-size: 1.5em;
+    font-family: sans-serif;
+    text-align: left;
+}
+
+
+footer {
+    color: chocolate;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
